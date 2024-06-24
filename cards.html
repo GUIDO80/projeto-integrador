@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .principal {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid rgba(0, 0, 0, 0.438);
+            background-color: bisque;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            height: 380px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-titulo {
+            font-size: 1em;
+            margin: 0 0 10px;
+        }
+
+        .saiba-mais {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .saiba-mais a {
+            text-decoration: none;
+            background-color: #185ca5ce;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .saiba-mais a:hover {
+            background-color: #0056b3;
+        }
+
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .prev {
+            background-color: darkgrey;
+            border: 1px solid black;
+            border-radius: 50px;
+            left: 650px;
+        }
+
+        .next {
+            background-color: darkgrey;
+            border: 1px solid black;
+            border-radius: 50px;
+            right: 650px;
+        }
+
+        .prev:hover {
+            background-color: rgb(156, 153, 153);
+        }
+
+        .next:hover {
+            background-color: rgb(156, 153, 153);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="card">
+            <img src="img/niticia1.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">CFM recorre de suspensão de norma para manter proibição
+                    de aborto em casos de estupro</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="notícia1.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia2.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">França inclui oficialmente direito ao aborto em sua
+                    Constituição e anuncia que tentará expansão do direito
+                    para a UE</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="notícia1.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia3.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">Abortos nos EUA atingem nível mais alto em mais de uma
+                    década</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="notícia3.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia4.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">Ministério da Saúde recua após suspender nota sobre o
+                    aborto legal</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="notícia4.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia5.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">Claudia Raia defende aborto e conta experiência
+                    pessoal</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="notícia5.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia6.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">Rafa kaliman revela ter sofrido aborto</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="noticia6.html">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/noticia7.webp" alt="Imagem do Card">
+            <div class="card-content">
+                <h6 class="card-titulo">Ex-BBB Lumena revela que sofreu aborto espontaneo</h6>
+            </div>
+            <div class="saiba-mais">
+                <a href="noticia7.html">Saiba Mais</a>
+            </div>
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("card");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
